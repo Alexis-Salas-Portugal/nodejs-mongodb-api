@@ -5,7 +5,7 @@ const userRoute = require("./routes/user");
 
 // settings
 const app = express();
-const port = process.env.PORT || 9000;
+const port = process.env.PORT || 3000;
 
 // middlewares
 app.use(express.json());
@@ -18,7 +18,7 @@ app.get("/", (req, res) => {
 
 // mongodb connection
 mongoose
-  .connect(process.env.MONGODB_URI)
+  .connect('mongodb+srv://AlexisSalas:ContraSegura@cluster0.8poqh.mongodb.net/ControlAereonautico?retryWrites=true&w=majority')
   .then(() => console.log("Connected to MongoDB Atlas"))
   .catch((error) => console.error(error));
 
